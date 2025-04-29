@@ -9,14 +9,6 @@ with open("sentiment_model.p", "rb") as file:
 vectorizer = data['vectorizer']
 classifier = data['logreg']
 
-# Mapping function
-def get_sentiment_label(pred):
-    if pred == 0:
-        return "Negative 😠"
-    elif pred == 1:
-        return "Neutral 😐"
-    else:
-        return "Positive 😊"
 
 # Streamlit UI
 st.set_page_config(page_title="Sentiment Analysis", layout="centered")
@@ -31,5 +23,14 @@ if st.button("Analyze"):
     else:
         transformed_input = vectorizer.transform([user_input])
         prediction = classifier.predict(transformed_input)[0]
-        sentiment = get_sentiment_label(prediction)
-        st.success(f"🎯 Sentiment: **{sentiment}**")
+
+        # Display raw prediction and classifier classes
+        st.write(f"Predicted output: {prediction}")
+
+        # Use string comparison for sentiment labels
+        if prediction == "Positive":
+            st.success("😊 Positive sentiment detected!")
+        elif prediction == "Negative":
+            st.error("😞 Negative sentiment detected!")
+        else:
+            st.warning("😐 Neutral sentiment detected!")

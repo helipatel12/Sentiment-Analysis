@@ -1,18 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sentiment Analysis</title>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; margin-top: 50px; }
-        input { padding: 10px; width: 300px; }
-        button { padding: 10px; cursor: pointer; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Sentiment Analysis App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #121212;
+      color: #DFD0B8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 25px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    form {
+      background-color: #393E46;
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 0 15px rgba(148, 137, 121, 0.2);
+    }
+
+    label {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      display: block;
+      color: #DFD0B8;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 12px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #222831;
+      color: #DFD0B8;
+      resize: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #948979;
+      color: #222831;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #DFD0B8;
+      color: #393E46;
+    }
+
+    .result {
+      margin-top: 25px;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    .positive {
+      color: #00e676;
+    }
+
+    .negative {
+      color: #ff5252;
+    }
+
+    .neutral {
+      color: #ffc107;
+    }
+
+    .warning {
+      color: #ffeb3b;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Sentiment Analysis</h1>
-    <form action="/predict" method="post">
-        <input type="text" name="text" placeholder="Enter text here" required>
-        <button type="submit">Analyze</button>
-    </form>
+  <h1>Sentiment Analysis App</h1>
+  <form method="POST">
+    <label for="text_input">Enter your text below:</label>
+    <textarea name="text_input" id="text_input" placeholder="Type your message here...">{{ user_input }}</textarea>
+    <button type="submit">Analyze</button>
+  </form>
+
+  {% if sentiment_message %}
+    <div class="result
+      {% if prediction == 'Positive' %}positive
+      {% elif prediction == 'Negative' %}negative
+      {% elif prediction == 'Neutral' %}neutral
+      {% else %}warning{% endif %}
+    ">
+      {{ sentiment_message }}
+    </div>
+  {% endif %}
+
+  {% if prediction %}
+    <div class="result">
+      <strong>Predicted Output:</strong> {{ prediction }}
+    </div>
+  {% endif %}
 </body>
 </html>
