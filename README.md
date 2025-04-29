@@ -14,26 +14,54 @@ This project is a **Sentiment Analysis** application that classifies text data i
 
 To install and run this project locally:
 
-1. Clone the repository:
+1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/your-username/sentiment-analysis.git
 
-2. Navigate to the project directory:
+2. **Navigate to the project directory:**
 
     ```bash
     cd sentiment-analysis
 
-3. Set up a virtual environment and install dependencies:
-    For Python, create a virtual environment:
+3. **Set up a virtual environment and install dependencies:**
++ For Python, create a virtual environment:
     ```bash
     python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-Alternatively, you can manually install required libraries like:
+    
++ Activate the virtual environment:
+    ```bash
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-bash
-Copy
-Edit
-pip install pandas scikit-learn nltk
-If your project uses a specific dataset, make sure to place the dataset in the correct folder.
++ Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+
+4. If your project uses a specific dataset, make sure to place the dataset in the correct folder.
+
+
+
+## Usage
+
+
+## Features
+
++ Text Preprocessing: Includes tokenization, stopword removal, and lemmatization to clean and prepare the text for analysis.
++ Modeling: The sentiment analysis model is built using machine learning algorithms such as Logistic Regression or Naive Bayes.
++ Evaluation: The model is evaluated based on metrics like accuracy, precision, recall, and F1-score to determine its effectiveness.
++ Visualization: Generate plots to visualize sentiment distribution across different texts (optional feature).
+
+## Technologies
+This project is built using the following technologies:
+
++ Programming Language: Python
+
++ Libraries:
+    + pandas for data handling  
+    + scikit-learn for machine learning algorithms   
+    + nltk for natural language processing 
+    + matplotlib for data visualization (optional)
+
++ Tools:
+    + Jupyter Notebook (for experimentation and exploration)
+    + VSCode (Integrated Development Environment)
