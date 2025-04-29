@@ -18,3 +18,22 @@ To install and run this project locally:
 
    ```bash
    git clone https://github.com/your-username/sentiment-analysis.git
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd sentiment-analysis
+
+3. Set up a virtual environment and install dependencies:
+    For Python, create a virtual environment:
+    ```bash
+    python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+Alternatively, you can manually install required libraries like:
+
+bash
+Copy
+Edit
+pip install pandas scikit-learn nltk
+If your project uses a specific dataset, make sure to place the dataset in the correct folder.
