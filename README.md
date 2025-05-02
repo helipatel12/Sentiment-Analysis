@@ -50,27 +50,27 @@ Sentiment Analysis/
 
 2. **🧪 Create and Activate Virtual Environment (Recommended):**
     ```bash
-        python -m venv env
-        source env/bin/activate          # On Windows: env\\Scripts\\activate
+    python -m venv env
+    source env/bin/activate          # On Windows: env\\Scripts\\activate
     ```
 
 3. **📦 Install Required Python Packages:**
     ```bash
-        pip install -r requirements.txt
+    pip install -r requirements.txt
     ```
 
 4. **🚀 Run the Apps:**
-▶️ To launch the Streamlit App:
++ ▶️ To launch the Streamlit App:
     ```bash
-        streamlit run app.py
+    streamlit run app.py
     ```
-This will open a browser window where you can enter review text and get a sentiment prediction.
+    - This will open a browser window where you can enter review text and get a sentiment prediction.
 
-🌐 To launch the Flask App:
++ 🌐 To launch the Flask App:
     ```bash
-        python flask_app.py
+    python flask_app.py
     ```
-Then go to http://127.0.0.1:5000/ in your browser.
+    - Then go to http://127.0.0.1:5000/ in your browser.
 
 ---
 
