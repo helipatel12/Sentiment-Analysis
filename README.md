@@ -1,111 +1,103 @@
-# Sentiment Analysis Project
+# 📝 Sentiment Analysis on Amazon Product Reviews
 
-This project is a **Sentiment Analysis** application that classifies text data into categories such as positive, negative, or neutral. It leverages natural language processing (NLP) techniques and machine learning algorithms to predict the sentiment of input text.
+This project utilizes **Natural Language Processing (NLP)** and **Machine Learning** to analyze customer reviews from Amazon and classify them as **positive**, **negative**, or **neutral**.
 
-## Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Features](#features)
-4. [Technologies](#technologies)
-5. [License](#license)
+It offers two front-end interfaces for interacting with the sentiment prediction system:
 
-## Installation
+- **Streamlit App**: A Streamlit app for quick prototyping and user-friendly interaction.
+- **Flask Web App**: A Flask web app for more customizable web deployment.
 
-To install and run this project locally:
+The system uses a trained machine learning model (pickled) and includes a Jupyter Notebook that handles data preprocessing, feature extraction, model training, and evaluation.
 
-1. **Clone the repository:**
+
+---
+
+## 🚀 Features
+
+- 🧹 **Text Preprocessing**: Lowercasing, stopword removal, and stemming.  
+- 🔍 **Feature Extraction**: Text-to-vector conversion using **TF-IDF vectorization**.  
+- 🤖 **Sentiment Classification**: Trained using a supervised ML algorithm (e.g., Naive Bayes or Logistic Regression).  
+- 🧠 **Model Persistence**: Pickled `.p` model file enables reuse without retraining.  
+- 🌐 **Dual Interface**:  
+  - **Streamlit**: Lightweight and interactive front end for sentiment testing. 
+  - **Flask**: Web backend with form-based input and sentiment response.
+
+---
+
+## 🗂️ Project Structure
+Sentiment Analysis/
+├── Amazon_Product_Sentiment Analysis.ipynb   # Jupyter notebook with training & evaluation
+├── app.py                                    # Streamlit app
+├── flask_app.py                              # Flask app
+├── sentiment_model.p                         # Pickled trained model
+├── requirements.txt                          # Python dependencies
+├── README.md                                 # Project documentation
+├── .gitignore
+└── .git/                                     # Git metadata (if version controlled)
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+1. **🔄 Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/sentiment-analysis.git
+    git clone https://github.com/helipatel12/Sentiment-Analysis.git
+    cd Sentiment-Analysis
 
-2. **Navigate to the project directory:**
-
+2. **🧪 Create and Activate Virtual Environment (Recommended):**
     ```bash
-    cd sentiment-analysis
+        python -m venv env
+        source env/bin/activate          # On Windows: env\\Scripts\\activate
 
-3. **Set up a virtual environment and install dependencies:**
-    + For Python, create a virtual environment:
-        ```bash
-        python -m venv venv
-        
-    + Activate the virtual environment:
-        ```bash
-        source venv/bin/activate  # On Windows: venv\Scripts\activate
-    
-    + Install the required dependencies:
-        ```bash
+3. **📦 Install Required Python Packages:**
+    ```bash
         pip install -r requirements.txt
 
-4. If your project uses a specific dataset, make sure to place the dataset in the correct folder.
-
-
-
-## Usage
-
-After setting up the project, you can interact with the Sentiment Analysis system using either the **Flask web app** or the **Streamlit app**, depending on your preference.
-
-### 🔹 Option 1: Run with Flask
-
-1. Navigate to the project folder (if not already there):
-
-   ```bash
-   cd sentiment-analysis
-
-2. Run the Flask application:
-
+4. **🚀 Run the Apps:**
+▶️ To launch the Streamlit App:
     ```bash
-    python app.py
+        streamlit run app.py
+This will open a browser window where you can enter review text and get a sentiment prediction.
 
-3. Open your browser and go to:
-
-    ```cpp
-    http://127.0.0.1:5000/
-    
-+ You’ll see a web interface where you can enter text, and the app will display the predicted sentiment.
-
-### 🔹 Option 2: Run with Streamlit
-
-1. Navigate to the project folder (if not already there):
-
-   ```bash
-   cd sentiment-analysis
-
-2. Run the Streamlit application:
-
+🌐 To launch the Flask App:
     ```bash
-    streamlit run streamlit_app.py
+        python flask_app.py
+Then go to http://127.0.0.1:5000/ in your browser.
 
-3. Streamlit will automatically open in your default browser. If not, visit:
+---
 
-    ```cpp
-    http://localhost:8501/
-    
-+ You can enter text in the input field and see real-time sentiment predictions with a clean UI.
+## **📊 Model Training and Evaluation:**
 
+To understand how the model is trained:
 
-## Features
+    + Open Amazon_Product_Sentiment Analysis.ipynb in Jupyter Notebook or Google Colab.
+    + Follow steps for data cleaning, text vectorization, model training, and performance evaluation. 
 
-+ Text Preprocessing: Includes tokenization, stopword removal, and lemmatization to clean and prepare the text for analysis.
-+ Modeling: The sentiment analysis model is built using machine learning algorithms such as Logistic Regression or Naive Bayes.
-+ Evaluation: The model is evaluated based on metrics like accuracy, precision, recall, and F1-score to determine its effectiveness.
-+ Visualization: Generate plots to visualize sentiment distribution across different texts (optional feature).
+You can retrain the model and update sentiment_model.p as needed.
 
-## Technologies
+---
 
-This project is built using the following technologies:
+## 💡 Example Use Case
 
-+ Programming Language: Python
+Here are some example reviews and their corresponding sentiment outputs:
 
-+ Libraries:
-    + pandas for data handling  
-    + scikit-learn for machine learning algorithms   
-    + nltk for natural language processing 
-    + matplotlib for data visualization (optional)
+- **Input**: “This product is amazing! Highly recommended.”  
+  **→ Output**: *Positive*
 
-+ Tools:
-    + Jupyter Notebook (for experimentation and exploration)
-    + VSCode (Integrated Development Environment)
+- **Input**: “The item was damaged and arrived late.”  
+  **→ Output**: *Negative*
 
-## License
+---
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for more details.
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 👩‍💻 Author
+
+**Heli Patel**  
+🔗 [GitHub Profile](https://github.com/helipatel12)
