@@ -77,9 +77,8 @@ Sentiment Analysis/
 ## **📊 Model Training and Evaluation:**
 
 To understand how the model is trained:
-
-    + Open Amazon_Product_Sentiment Analysis.ipynb in Jupyter Notebook or Google Colab.
-    + Follow steps for data cleaning, text vectorization, model training, and performance evaluation. 
++ Open Amazon_Product_Sentiment Analysis.ipynb in Jupyter Notebook or Google Colab.
++ Follow steps for data cleaning, text vectorization, model training, and performance evaluation. 
 
 You can retrain the model and update sentiment_model.p as needed.
 
