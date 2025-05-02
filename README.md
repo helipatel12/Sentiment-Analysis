@@ -25,6 +25,7 @@ The system uses a trained machine learning model (pickled) and includes a Jupyte
 ---
 
 ## 🗂️ Project Structure
+```
 Sentiment Analysis/
 ├── Amazon_Product_Sentiment Analysis.ipynb   # Jupyter notebook with training & evaluation
 ├── app.py                                    # Streamlit app
@@ -45,25 +46,30 @@ Sentiment Analysis/
    ```bash
     git clone https://github.com/helipatel12/Sentiment-Analysis.git
     cd Sentiment-Analysis
+    ```
 
 2. **🧪 Create and Activate Virtual Environment (Recommended):**
     ```bash
         python -m venv env
         source env/bin/activate          # On Windows: env\\Scripts\\activate
+    ```
 
 3. **📦 Install Required Python Packages:**
     ```bash
         pip install -r requirements.txt
+    ```
 
 4. **🚀 Run the Apps:**
 ▶️ To launch the Streamlit App:
     ```bash
         streamlit run app.py
+    ```
 This will open a browser window where you can enter review text and get a sentiment prediction.
 
 🌐 To launch the Flask App:
     ```bash
         python flask_app.py
+    ```
 Then go to http://127.0.0.1:5000/ in your browser.
 
 ---
